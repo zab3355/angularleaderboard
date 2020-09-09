@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html ng-app="leaderboard">
+    <head>
+        <title>Madden Leader Board</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Bootstrap -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/leaderboard.css"/>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+    </head>
+    <body>
+        <div class="container" ng-controller="MainCtrl as main">
+            <img src="img/madden_logo.png" class="madden-logo" alt="Madden Logo">
+
+            <img src="img/Playerz-Zone-Final-Logo-Updated.png" class="playerzone-logo" alt="Madden Logo">
+            <img src="img/94-1-zone-logo.png" class="radio-logo" alt="Madden Logo">
+
+            <h3 class="rocs-best"> Roc's best player tournament </h3>
+
+            <div id="table" class="table-editable">
+                <table class="table table-hover table-responsive-md text-center">
+                <thead class="table-header">
+                <tr>
+                    <th class="th-head">Rank</th>
+                    <th class="th-head"></th> <!-- For Team Picture -->
+                    <th class="th-head">Team/Player</th>
+                   <!--  <th class="th-head"></th> For up/down arrow -->
+                    <th class="th-head">Record</th>                    
+                    <th class="th-head">Points for</th>
+                    <th class="th-head">Points against</th>
+                </tr>
+                </thead>
+                </div>
+                <tbody>
+                <!--angular connections-->
+                <!--tr ng-repeat="team in main.teams">
+                    <td><input type="text" class="pt-3-half" ng-model="team.rank" ng-blur="main.updateTeam(team)"/></td>
+                    <td class="pt-3-half">
+                        <span class="table-up"><a href="#!" class="indigo-text"><img src="img/up-arrow.png" class="down-sort" alt="move rank up"></a></span>
+                        <span class="table-down"><a href="#!" class="indigo-text"><img src="img/down-arrow.png" class="down-sort" alt="move rank down"></a></span>
+                    </td>
+                    <td class="pt-3-half">
+
+                        <input type="image" class="team-logo" id="logoRow" ng-src="{{logos}}" ng-model="team.logo" ng-blur="main.updateTeam(team)">
+
+                    </td>   
+                    <td><input type="text" class="pt-3-half" ng-model="team.name" ng-blur="main.updateTeam(team)"></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.record" ng-blur="main.updateTeam(team)"/></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.pointsfor" ng-blur="main.updateTeam(team)"/></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.pointsagainst" ng-blur="main.updateTeam(team)"/></td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                            class="btn btn-danger btn-rounded btn-sm my-0" ng-click="main.removeTeam(team)" id="remove-button">Remove</button></span>
+                      </td>
+
+                </tr-->
+                </tbody>
+            </table>
+<!---->
+            <div class="well">
+                <h4>Add Team</h4>
+
+                <form class="form-inline" role="form" novalidate ng-submit="main.addTeam()">
+                    <div class="form-group">
+                        <select name="logo" class="btn dropdown-toggle btn-light" aria-expanded="false" data-toggle="dropdown" ng-model="main.newTeam.logo" id="logo" required>
+                            <optgroup label="Teams"></optgroup>
+                            <option value="" disabled selected value>-Choose a Logo-</option>
+                            <option value="img/logos/cardinals.png"class="team-logo">Arizona Cardinals</option>
+                            <option value="img/logos/falcons.png" class="team-logo" title="falcons.png">Atlanta Falcons</option>	
+                            <option value="img/logos/ravens.png" class="team-logo" title="ravens.png">Baltimore Ravens</option>	
+                            <option value="img/logos/bills.png" class="team-logo" title="bills.png">Buffalo Bills</option>	
+                            <option value="img/logos/panthers.png" class="team-logo" title="panthers.png">Carolina Panthers</option>
+                            <option value="img/logos/bears.png" class="team-logo" title="bears.png">Chicago Bears</option>
+                            <option value="img/logos/bengals.png" class="team-logo" title="bengals.png">Cincinnati Bengals</option>
+                            <option value="img/logos/browns.png" class="team-logo" title="browns.png">Cleveland Browns</option>
+                            <option value="img/logos/cowboys.png" class="team-logo" title="cowboys.png">Dallas Cowboys</option>
+                            <option value="img/logos/broncos.png" class="team-logo" title="broncos.png">Denver Broncos</option>
+                            <option value="img/logos/lions.png" class="team-logo" title="lions.png">Detriot Lions</option>
+                            <option value="img/logos/packers.png" class="team-logo" title="packers.png">Green Bay Packers</option>
+                            <option value="img/logos/texans.png" class="team-logo" title="texans.png">Houston Texans</option>
+                            <option value="img/logos/colts.png" class="team-logo" title="colts.png">Indianapolis Colts</option>
+                            <option value="img/logos/jaguars.png" class="team-logo" title="jaguars.png">Jacksonville Jaguars</option>
+                            <option value="img/logos/chiefs.png" class="team-logo" title="chiefs.png">Kansas City Chiefs</option>
+                            <option value="img/logos/raiders.png" class="team-logo" title="raiders.png">Las Vegas Raiders</option>
+                            <option value="img/logos/chargers.png" class="team-logo" title="chargers.png">Los Angeles Chargers</option>
+                            <option value="img/logos/rams.png" class="team-logo" title="rams.png">Los Angeles Rams</option>
+                            <option value="img/logos/dolphins.png" class="team-logo" title="dolphins.png">Miami Dolphins</option>
+                            <option value="img/logos/vikings.png" class="team-logo" title="vikings.png">Minnesota Vikings</option>
+                            <option value="img/logos/patriots.png" class="team-logo" title="patriots.png">New England Patriots</option>
+                            <option value="img/logos/saints.png" class="team-logo" title="saints.png">New Orleans Saints</option>
+                            <option value="img/logos/giants.png" class="team-logo" name="giants" title="giants.png">New York Giants</option>
+                            <option value="img/logos/jets.png" class="team-logo" >New York Jets</option>
+                            <option value="img/logos/eagles.png" class="team-logo" title="jets.png">Philadelphia Eagles</option>
+                            <option value="img/logos/steelers.png" class="team-logo" title="jets.png">Pittsburgh Steelers</option>
+                            <option value="img/logos/49ers.png" class="team-logo" title="jets.png">San Francisco 49ers</option>
+                            <option value="img/logos/seahawks.png" class="team-logo" title="jets.png">Seattle Seahawks</option>
+                            <option value="img/logos/buccaneers.png" class="team-logo" title="jets.png">Tampa Bay Buccaneers</option>
+                            <option value="img/logos/titans.png" class="team-logo" title="jets.png">Tennessee Titans</option>
+                            <option value="img/logos/Washington.png" class="team-logo" title="jets.png">Washington Football Team</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" ng-model="main.newTeam.name" placeholder="Team Name" style="font-size: small;" required>
+                    </div>
+                    <button type="submit" id="submit" onclick="logoSubmit()" class="btn btn-primary mb-4 waves-effect waves-light" style="position: absolute; padding: .7em; padding-left: 18px;padding-right: 18px; margin-left: 416px;">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <img src="img/SBU_Logo_White_Text.png" class="radio-logo" alt="Sandbox Union Logo">
+        </footer>
+
+    </body>
+
+    <!--firebase firestore-->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar-full.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+    <script src="//cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script src="//cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+    <script>
+        // firestore init
+        const config = {
+            apiKey: "AIzaSyC7D--5iMo66tGq1opLqPh0xCiD-6IRKdI",
+            authDomain: "leaderboard-6191e.firebaseapp.com",
+            databaseURL: "https://leaderboard-6191e.firebaseio.com",
+            projectId: "leaderboard-6191e",
+            storageBucket: "leaderboard-6191e.appspot.com",
+            messagingSenderId: "568575045342",
+            appId: "1:568575045342:web:df5247303ed092ad429c4f",
+            measurementId: "G-E18V5TDGPQ"
+        };
+        firebase.initializeApp(config);
+
+        // ref to database
+        const db = firebase.firestore();
+        const admin = true;
+    </script>
+
+    <script src="src/js-functions.js"></script>
+    <!--script>src="src/leaderboard-new.js"</script-->
+    <script src="src/non-ng-leaderboard2.js"></script>
+</html>

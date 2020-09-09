@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="leaderboard">
+    <head>
+        <title>Madden Leader Board</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Bootstrap -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/leaderboard.css"/>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+
+    </head>
+    <body>
+        <div class="container" ng-controller="MainCtrl as main">
+            <img src="img/madden_logo.png" class="madden-logo" alt="Madden Logo">
+
+            <img src="img/Playerz-Zone-Final-Logo-Updated.png" class="playerzone-logo" alt="Madden Logo">
+            <img src="img/94-1-zone-logo.png" class="radio-logo" alt="Madden Logo">
+            <img src="img/SBU_Logo_White_Text.png" class="sandbox-logo" alt="Sandbox Union Logo">
+
+            
+            <h3 class="rocs-best"> Roc's best player tournament </h3>
+
+            <div id="table" class="table-bootstrap-edits">
+                <table class="table text-center">
+                <thead class="table-header">
+                <tr class="table-head-edits">
+                    <th class="th-head"></th>
+                <!--    <th class="th-head">Sort</th>  For Sort Pic -->
+                    <th class="th-head"></th>
+                    <th class="th-head">Team/Player</th> 
+                    <th class="th-head">Record</th>                    
+                    <th class="th-head">Points for</th>
+                    <th class="th-head">Points against</th>
+                    <!--th class="th-head"></th-->
+                </tr>
+                </thead>
+                </div>
+                <tbody class="tbody-index">
+                <!--
+                <tr ng-repeat="team in main.teams" id="table-body-edits">
+                    <td><input type="text" class="row-rank" ng-model="team.rank" ng-blur="main.updateTeam(team)" style="border: 0; color:white; font-size: 25px; background-color:#b0b2c3;"  disabled/></td>
+                    <td class="pt-3-half">
+                        <input type="image" class="team-logo" id="logoRow" ng-src="{{team.logo}}" ng-model="team.logo" ng-blur="main.updateTeam(team)">
+                    </td>                  
+                    <td><input type="text" class="pt-3-half" ng-model="team.name" ng-blur="main.updateTeam(team)" style="border: 0; font-size: 20px; background-color: #b0b2c3;" disabled></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.record" ng-blur="main.updateTeam(team)" style="border: 0; font-size: 16px; background-color: #b0b2c3;" disabled/></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.pointsfor" ng-blur="main.updateTeam(team)" style="border: 0; font-size: 16px; background-color: #b0b2c3;" disabled/></td>
+                    <td><input type="text" class="pt-3-half" ng-model="team.pointsagainst" ng-blur="main.updateTeam(team)" style="border: 0; font-size: 16px;  background-color: #b0b2c3;" disabled/></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <div class="radio-logo"></div>
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar-full.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+        <script src="//cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+        <script src="//cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+        <script>
+            // firestore init
+            const config = {
+                apiKey: "AIzaSyC7D--5iMo66tGq1opLqPh0xCiD-6IRKdI",
+                authDomain: "leaderboard-6191e.firebaseapp.com",
+                databaseURL: "https://leaderboard-6191e.firebaseio.com",
+                projectId: "leaderboard-6191e",
+                storageBucket: "leaderboard-6191e.appspot.com",
+                messagingSenderId: "568575045342",
+                appId: "1:568575045342:web:df5247303ed092ad429c4f",
+                measurementId: "G-E18V5TDGPQ"
+            };
+            firebase.initializeApp(config);
+
+            // ref to database
+            const db = firebase.firestore();
+            const admin = false;
+        </script>
+
+        
+        <!--script src="src/leaderboard-new.js"></script-->
+        <script src="src/js-functions.js"></script>
+        <script src="src/non-ng-leaderboard2.js"></script>
+    </body>
+</html>

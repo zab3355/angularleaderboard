@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'EASPORTS15';
+    src: url('../fonts/EA-Sports-Covers-SC.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Basketball';
+    src: url('../fonts/Basketball.otf')  format('opentype');
+}
+body {
+    background-image: url("../img/stadium-background-edited.png");
+    background-size: cover; 
+}
+
+
+.madden-logo {
+    width: 40%;
+    padding-top: .5em;
+}
+
+.playerzone-logo {
+    width: 23%;
+    float: right;
+    padding: 1em;
+}
+
+input {
+    background-color: #b0b2c3;
+}
+
+.radio-logo {
+    width: 23%;
+    float: right;
+    padding: 1em;
+}
+
+.sandbox-logo {
+    width: 23%;
+    float: left;
+    padding: 1.5em;
+}
+
+.sandbox-logo-top {
+    width: 23%;
+    float: left;
+    padding: 1.5em;
+}
+
+.rocs-best {
+    color: white;
+    font-family: "EASPORTS15";
+    text-align: right;
+}
+
+.table-bootstrap-edits {
+    background-color: rgb(10,14,66, .8);
+    padding: 2.5em;
+    border-radius: 50px;
+}
+
+.table-head-edits {
+    font-family: "EASPORTS15";
+    font-size: medium;
+}
+
+#table-body-edits {
+    background-color:#b0b2c3;
+    padding: 1em;   
+}
+.table-header {
+    color: white;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+    padding: 10px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 16px;
+    border-top: 10px solid #131c59;
+}
+
+.tbody-index {
+    background-color: #b0b2c4;
+}
+
+.th-head {
+    text-align: center;
+}
+
+.team-logo {
+    width: 70px;
+    opacity: 1;
+}
+
+.team-logo-hidden {
+    display: none;
+}
+
+.ng-pristine.ng-untouched.ng-valid.ng-not-empty:hover, .ng-pristine.ng-untouched.ng-valid.ng-not-empty:active {
+    display: inline-block;
+}
+
+.down-sort {
+    width:42%;
+    padding-top: 1.5em;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.remote {
+    margin: 10px;
+    padding: 10px;
+}
+
+.pt-3-half {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    text-align: center;
+    border: 0px;
+    color: white;
+    text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;;
+    font-family: "Basketball";
+    font-size: 25px;
+}
+
+.submit {
+    color: black;
+}
+
+.row-rank {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    text-align: center;
+    border: 0px;
+    font-family: "Basketball";
+    font-size: 30px;
+    color: white;
+}
+
+.edit input[type=text] {
+    border: 1px solid #ffffff;
+    width: 100%;
+    resize: none;
+    background-color: #ffffff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.edit input[type=text]:hover,
+.edit input[type=text]:focus {
+    border: 1px solid #d7cebf;
+    outline: none
+}
+
+.xlarge {
+    font-size: 36px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.large {
+    font-size: 30px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.medium {
+    font-size: 24px;
+    font-weight: bold;
+    color: inherit;
+}
+
+#remove-button {
+    font-size: small;
+ }
+
+/* select option */
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+#logo {
+    border: 1px solid #BBBBBB; 
+    font-size: small;
+}
+  .form-inline .form-group {
+    font-size: small;
+    padding: 10px;
+  }
